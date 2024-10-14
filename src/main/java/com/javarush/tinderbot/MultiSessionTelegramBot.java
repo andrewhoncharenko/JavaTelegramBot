@@ -277,7 +277,7 @@ public class MultiSessionTelegramBot extends TelegramLongPollingBot {
 
     public static String loadPrompt(String name) {
         try {
-            var is = ClassLoader.getSystemResourceAsStream("prompts/" + name + ".txt");
+            var is = ClassLoader.getSystemResourceAsStream("resources/prompts/" + name + ".txt");
             return new String(is.readAllBytes());
         } catch (IOException e) {
             throw new RuntimeException("Can't load GPT prompt!");
@@ -286,7 +286,7 @@ public class MultiSessionTelegramBot extends TelegramLongPollingBot {
 
     public static String loadMessage(String name) {
         try {
-            var is = ClassLoader.getSystemResourceAsStream("messages/" + name + ".txt");
+            var is = ClassLoader.getSystemResourceAsStream("resources/messages/" + name + ".txt");
             return new String(is.readAllBytes());
         } catch (IOException e) {
             throw new RuntimeException("Can't load message!");
@@ -295,7 +295,7 @@ public class MultiSessionTelegramBot extends TelegramLongPollingBot {
 
     public static InputStream loadImage(String name) {
         try {
-            return ClassLoader.getSystemResourceAsStream("images/" + name + ".jpg");
+            return ClassLoader.getSystemResourceAsStream("resources/images/" + name + ".jpg");
         } catch (Exception e) {
             throw new RuntimeException("Can't load photo!");
         }
